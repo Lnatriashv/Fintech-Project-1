@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+}
+
+.loading {
+  max-width: 500px;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.loading__message {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.loading__author {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: rgba(189, 189, 189, 1);
+  margin: 0.6rem 0 2rem 0;
+  display: block;
+}
+
+.loading__anim {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  border: 5px solid rgba(189, 189, 189, 0.25);
+  border-left-color: rgba(3, 155, 229, 1);
+  border-top-color: rgba(3, 155, 229, 1);
+  border-radius: 50%;
+  animation: rotate 600ms infinite linear;
+  margin: 0 auto;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.loading__dots span {
+  font-size: 2rem;
+  animation: blink 1s infinite;
+  margin: 0 2px;
+  color: #2196f3;
+}
+
+.loading__dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading__dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading__search {
+  margin-top: 2rem;
+}
+
+.loading__search input {
+  padding: 10px 15px;
+  border: 2px solid rgba(3, 155, 229, 0.5);
+  border-radius: 25px;
+  width: 80%;
+  background: #fff;
+  outline: none;
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(3, 155, 229, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(3, 155, 229, 0.3);
+  }
+}
